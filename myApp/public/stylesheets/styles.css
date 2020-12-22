@@ -1,8 +1,17 @@
-.body {
-    width: 100%;
-    background-color: pink;
+body {
+    background-color: lightgrey;
     font-size: 16px;
 }
+
+img {
+    width: 90%;
+    height: auto;
+}
+.b, .c, .d, .f, .g, .h { /* Esto me va a servir para volverlos a aparecer en Desktop */
+    display: none;
+}
+
+
 
 /* Style the navigation menu */
 .menu-list {
@@ -50,30 +59,61 @@
 /*seccion prodcuto*/
 
 
-.container-padre-section {
+.container-padre-section { /* se ejecuta en columna en relacion al titulo y a los productos */
     display: flex;
     flex-direction: column;
-    width: 100%;
-
+    align-items: center;
+    margin: 2% 3%;
 }
-.container-hijo-Padre-section-product {
-    display: flex;
-    max-width: 100%;
-    flex-wrap: nowrap;
-}
-.container-hijo-Padre-hijo-Padre-section-product {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 25%;
-}
-
-.hijoArriba {
-    display: flex;
-    width: 100%;
-}
-.hijoAbajo {
-    display: flex;
-    
-    width: 100%;
-}
+    .container-hijo-section-title {
+        align-self: flex-start;
+        margin-left: 5%;
+    }
+    .container-hijo-Padre-section-product { /* Este me ordena las dos secciones de productos que tengo */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+        .container-hijo-padre-hijo-padre-section-product {
+            background-color: lightgrey;
+        }
+        .hijoAbajo {
+            display: flex;
+            height: auto;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 1px 2px rgb(182, 182, 182);
+        }
+        .hijoArriba {
+            display: flex;
+            height: auto;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 1px 2px rgb(182, 182, 182);
+        }
+            .imgDetail {
+                border-top: 2px solid lightgrey;
+                height: 3.5em;
+            }
+            .imgDetail {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+                .imgPosition {
+                    display: flex;
+                    justify-content: center;
+                }
+                .detailPrecio {
+                    margin-left: 5%;
+                    font-size: 1.2em;
+                }
+                .detailDescuento {
+                    margin-left: 10%;
+                }
+                    .green {
+                        color: rgb(0, 255, 0);
+                        border-color: rgb(0, 255, 0);
+                    }
+                
