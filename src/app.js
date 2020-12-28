@@ -1,8 +1,10 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const methodOverride = require("method-override")
+
 
 // Como acceder a cada ruta
 var indexRouter = require('./routes/index');
@@ -18,13 +20,16 @@ app.set('view engine', 'ejs');
 
 
 app.use(logger('dev'));
+//Estas dos lineas nos van a capturar la info que venga a traves de un FORM en forma de Objeto Literal y transformarlo en JSON.
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 
+app.use(cookieParser());
+// Esto nos va a servir para poder usar los metodos PUT y DELETE
+app.use(methodOverride("_method"));
 
 // Linea que nos va a ayudar a mostrar los archivos en la carpeta Public
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 
 // Como acceder a cada Vista

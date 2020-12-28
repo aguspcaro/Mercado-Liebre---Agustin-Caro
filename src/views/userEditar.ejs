@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+</head>
+<body>
+    <h1>Editar <%= userEditar.name%></h1>
+    <form action= "/editar?_method=PUT" method="POST">
+
+        <label for = "nombre">Nombre</label>
+        <input type="text" size = "15" maxlength="30" name="nombre" value="<%=userEditar.name%>">
+    
+        <label for = "nombreDeUsuario">Usuario</label>
+        <input type="text" size = "15" maxlength="30" name="usuario" value="<%=userEditar.usuario%>" >
+    
+        <label for = "email">E-mail</label>
+        <input type="email" size = "15" maxlength="30" name="email" value="<%=userEditar.email%>">
+
+        <label for = "fechaDeNacimiento">Fecha de nacimiento</label>
+        <input type="date" size = "15" maxlength="30" name="fechaDeNacimiento" value="<%=userEditar.fechaDeNacimiento%>">
+
+        <label for = "domicilio">Domicilio</label>
+        <input type="text" size = "15" maxlength="30" name="domicilio" value="<%=userEditar.Domicilio%>">
+
+        <input type="submit" value="Editar">
+
+    </form>
+</body>
+</html>

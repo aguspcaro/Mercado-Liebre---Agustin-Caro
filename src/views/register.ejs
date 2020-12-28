@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action= "/register" method="POST">
+
+        <label for = "nombre">Nombre</label>
+        <input type="text" size = "15" maxlength="30" name="nombre">
+    
+        <label for = "nombreDeUsuario">Usuario</label>
+        <input type="text" size = "15" maxlength="30" name="nombreDeUsuario" >
+    
+        <label for = "email">E-mail</label>
+        <input type="email" size = "15" maxlength="30" name="email">
+
+        <label for = "fechaDeNacimiento">Fecha de nacimiento</label>
+        <input type="date" size = "15" maxlength="30" name="fechaDeNacimiento" >
+
+        <label for = "domicilio">Domicilio</label>
+        <input type="text" size = "15" maxlength="30" id="domicilio" name="domicilio">
+
+        <h5><label for = "PerfilDelUsuario">Perfil del Usuario</label></h5>
+        <p><input type = "radio" name = "perfil"> Comprador</p>
+        <p><input type = "radio" name = "perfil"> Vendedor</p>
+
+        <h5><label for = "Intereses">Intereses</label></h5>
+        <p><input type = "checkbox" name = "Intereses"> Electro </p>
+        <p><input type = "checkbox" name = "Intereses"> Moda</p>
+        <p><input type = "checkbox" name = "Intereses"> Hogar</p>
+        <p><input type = "checkbox" name = "Intereses"> Juguetería</p>
+        <p><input type = "checkbox" name = "Intereses"> Vida Sana</p>
+
+        <h5><label for="Elegi tu foto de usuario">Elegí tu foto de Usuario</label></h5>
+        <input type="file"><br>
+
+        <p><label for = "password"></label>Elegí tu contraseña</p>
+        <p><input type="password" id="password" name="password"></p>
+        <p><label for = "password"></label>Confirmá tu contraseña</p>
+        <p><input type="password" id="password" name="password"></p>
+
+        <input type="submit" value="Registrar">
+
+    </form>
+</body>
+</html>
