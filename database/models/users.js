@@ -40,7 +40,7 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: "user_id"
         }),
         User.hasMany(models.Cart, {
-            as: "carts",
+            as: "cart",
             foreignKey: "user_id"
         })
         

@@ -1,6 +1,6 @@
 module.exports =  function(sequelize, dataTypes){
 
-    let alias = "Products";
+    let alias = "Product";
 
     let cols={
 
@@ -60,12 +60,7 @@ module.exports =  function(sequelize, dataTypes){
         brand_id:{ 
             type : dataTypes.INTEGER,
            
-        },
-        
-        sport_id:{ 
-            type : dataTypes.INTEGER,
-           
-        },
+        }
 
 
         }
@@ -78,32 +73,26 @@ module.exports =  function(sequelize, dataTypes){
             paranoid: true
     }
 
-    let Products = sequelize.define(alias, cols, config);
+    let Product = sequelize.define(alias, cols, config);
 
 
-    Products.associate = function(models){
+    Product.associate = function(models){
             
-        Products.belongsTo(models.Sizes, {
+        Product.belongsTo(models.Size, {
         
-            as: "sizes",
+            as: "size",
             foreignKey: "size_id"
         }),
 
-        Products.belongsTo(models.Brands, {
+        Product.belongsTo(models.Brand, {
         
-            as: "brands",
+            as: "brand",
             foreignKey: "brand_id"
-        }),
-            
-        Products.belongsTo(models.Sports, {
-        
-            as: "sports",
-            foreignKey: "sport_id"
         })
 
 
     }    
     
-    return Products;
+    return Product;
 
 }

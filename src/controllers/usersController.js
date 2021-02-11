@@ -1,63 +1,92 @@
+const db = require("../../database/models/index");
+
 let usersController = {
 
-    login : function (req, res) {
-        res.render("login")
+    mostrarLogin : function (req, res) {
+        res.render("users/login")
+    },
+    checkLogin : function(req, res) {
+        db.User.findAll({})
+
+        res.redirect("/")
     },
 
-    register : function(req, res) {
-        res.render("register")
+    mostrarRegister : function(req, res) {
+        res.render("users/register")
         
     },
-    crear : function(req, res) {
+    crearRegister : function(req, res) {
 
-        let usuario = {
-            nombre : req.body.nombre,
-            usuario : req.body.nombreDeUsuario,
+        db.User.create({
             email : req.body.email,
-            fechaDeNacimiento : req.body.fechaDeNacimiento,
-            Domicilio : req.body.domicilio
-        }
-        //guardar la info
+            password: req.body.password
+        })
         
-        res.render("index")
+        res.redirect("/");
     },
 
-    editar : function(req, res){
-        let idUser = req.params.idUser;
+    mostrarEditarUsuario : function(req, res) {
 
-        let users = [
-            {id: 1, name: "Agustin", usuario: "agus", email: "agus@getMaxListeners.com", fechaDeNacimiento: "16/08/1995", domicilio: "corrientes"},
-            {id: 2, name: "Sofia",  usuario: "sofi", email: "sofia@getMaxListeners.com", fechaDeNacimiento: "24/10/1995", domicilio: "elflein"},
-            {id: 3, name: "Guido,",  usuario: "gui", email: "guido@getMaxListeners.com", fechaDeNacimiento: "11/02/1996", domicilio: "monroe"},
-            {id: 4, name: "David",  usuario: "dav", email: "david@getMaxListeners.com", fechaDeNacimiento: "13/04/1997", domicilio: "sucre"},
-            {id: 5, name: "Alejandro",  usuario: "ale", email: "alejandro@getMaxListeners.com", fechaDeNacimiento: "16/08/1980", domicilio: "laPampa"},
-            {id: 6, name: "Jorge",  usuario: "jor", email: "jorge@getMaxListeners.com", fechaDeNacimiento: "19/01/1989", domicilio: "misiones"}
+        
+        res.render("editarUser")
+    },
 
-        ];
-        let userEditar = users[idUser]
+    editarUsuario : function(req, res){
+        
+        db.User.update({ 
+            email: req.body.email,
+            password: req.body.password
+        }, {
+            where : {
+                id : req.params.id
+            }
+        })
 
 
-        res.send("userEditar") //, { userEditar : userEditar}
+        res.redirect("/users/perfil")
+    },
+    mostrarPerfil: function(req, res) {
+
+        res.render("users/crearPerfil")
+
+    },
+    createPerfil: function(req, res) {
+
+        db.Profile.create({
+            image : req.body.email,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            age: req.body.age,
+            birthday: req.body.birthday
+
+        })
+        
+        res.redirect("/users/perfil");
+
+    },
+    mostrarEditarPerfil: function(req, res) {
+
+        res.render("users/editarPerfil")
+
+    },
+    editarPerfil: function(req, res) {
+
+        db.Profile.update({
+            image : req.body.email,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            age: req.body.age,
+            birthday: req.body.birthday
+
+        }, {
+            where : {
+                user_id: req.params.id
+            }
+        })
+
+        res.redirect("/users/perfil")
+
     }
 };
 
 module.exports = usersController;
-
-/*
-
-    login : function(req, res) {
-
-        Storage.open('users.json')
-
-        let user = storage.findOnBy('email', req.body.email)
-
-        if (user) {
-            if(bcrypt.compareSync(req.body.password, user.password)) {
-                return res.send('bienvenido')
-
-            }
-        }
-        res.redirect('/users/login')
-
-    },
-*/
