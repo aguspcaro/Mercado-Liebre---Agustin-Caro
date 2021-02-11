@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Para no cargar en github mis contraseñas de bd
+.env
