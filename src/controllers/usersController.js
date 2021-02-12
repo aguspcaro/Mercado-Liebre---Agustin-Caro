@@ -15,7 +15,7 @@ let usersController = {
     checkLogin : function(req, res) {
         db.User.findAll({})
 
-        res.redirect("/")
+        res.redirect("/users")
     },
 
     mostrarRegister : function(req, res) {
@@ -52,11 +52,13 @@ let usersController = {
 
         res.redirect("/users/perfil")
     },
-    mostrarPerfil: function(req, res) {
+
+    mostrarCrearPerfil: function(req, res) {
 
         res.render("users/crearPerfil")
 
     },
+    
     createPerfil: function(req, res) {
 
         db.Profile.create({
@@ -71,11 +73,13 @@ let usersController = {
         res.redirect("/users/perfil");
 
     },
+
     mostrarEditarPerfil: function(req, res) {
 
         res.render("users/editarPerfil")
 
     },
+
     editarPerfil: function(req, res) {
 
         db.Profile.update({

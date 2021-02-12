@@ -17,7 +17,7 @@ router.get("/editarUser/:id", usersController.editarUsuario)
 router.put("/editarUser", usersController.mostrarEditarUsuario)
 
 
-router.get("/crearPerfil/:id", usersController.mostrarPerfil)
+router.get("/crearPerfil/:id", usersController.mostrarCrearPerfil)
 router.post("/crearPerfil", usersController.createPerfil)
 
 
