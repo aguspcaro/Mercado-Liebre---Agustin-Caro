@@ -1,41 +1,82 @@
 <header>
+
     <nav class="nav">
 
-        <div class = "imagen-logo">
+        <div class = "imagenLogo">
 
-            <img src="/images/logo-mercado-liebre.svg"></img>
+            <a href="/">
+                <img src="/images/logo-mercado-liebre.svg"></img>
+            </a>
 
         </div>
-            <!-- Top Navigation Menu -->
-        <div class="menu-list">
-            <a href="#home" class="active"><p><a href="#"><i class="fas fa-bars"></i></a></p></a>
-                <!-- Navigation links (hidden by default) -->
-            <div id="myLinks">
-                <a href="#CreaTuCuenta">Cuenta</a>
-                <a href="#Ofertas">Ofertas</a>
-                <a href="#TiendasOficiales">Tiendas</a>
-                <a href="#Vender">Publicar</a>
-                <a href="#Ayuda">Ayuda/a>
-            </div>
-                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fas fa-bars"></i>
-                </a>
-            </div>
-            
-        <div class="login">
-            
-            <a href="/users">Ingresá</a>
-            
-            
 
+        <div class="buscar">                
+            
             <form action="/buscar" method="GET">
                 
                 <input type="text" size = "15" maxlength="30" name="homeBuscar" value="">
+
                 <input type="submit" value="Buscar">
+
             </form>
 
         </div>
+
+        <div class="menuList">
+
+            <ul>
+
+                <li>                
+                    <a href="/products">Ofertas</a>                
+                </li>
+                    
+                    
+                <li>
+                    <a href="/products">Tiendas oficiales</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/cart">Vender</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/help">Ayuda</a>
+                </li>
+
+            </ul>
+            
+        
+
+        </div>
+
+        <div class="menuList">
+
+            <ul>                
+            
+                <li>
+                    <a href="/users/register">Crea Tu Cuenta</a>
+                </li>
+
+                <li>
+                    <a href="/users/login">Ingresá</a>
+                </li>
+
+                <li>
+                    <a href="/cart">Mis compras</a>
+                </li>
+
+            </ul>
+            
+        </div>    
             
     </nav>
+
+    <div class="banner">
+
+        <img class="imgBanner" src="/images/img-home-banner.jpg" >
+
+    </div>
+    
 </header>

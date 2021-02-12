@@ -1,0 +1,22 @@
+.nav {
+    background-color: yellow;
+    width: 100%;
+}
+
+.imagenLogo {
+    background-color: yellow;
+}
+
+.imgBanner { 
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration:none;
+}
+
+li {
+    list-style: none;
+}
+

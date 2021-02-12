@@ -5,23 +5,24 @@ const multer = require('multer');
 let usersController = require ("../controllers/usersController.js")
 
 /* GET users listing. */
-router.get('/', usersController.mostrarLogin);
+router.get("/", usersController.root)
 
-router.post('/', usersController.checkLogin);
+router.get('/login', usersController.mostrarLogin);
+router.post('/login', usersController.checkLogin);
 
 router.get("/register", usersController.mostrarRegister)
 router.post("/register", usersController.crearRegister)
 
-router.get("/editar/:idUser", usersController.editarUsuario)
-router.put("/editar", usersController.mostrarEditarUsuario)
+router.get("/editarUser/:id", usersController.editarUsuario)
+router.put("/editarUser", usersController.mostrarEditarUsuario)
 
 
-router.get("/editar/:idUser", usersController.mostrarPerfil)
-router.post("/editar", usersController.createPerfil)
+router.get("/crearPerfil/:id", usersController.mostrarPerfil)
+router.post("/crearPerfil", usersController.createPerfil)
 
 
-router.get("/editar/:idUser", usersController.mostrarEditarPerfil)
-router.put("/editar", usersController.editarPerfil)
+router.get("/editarPerfil/:id", usersController.mostrarEditarPerfil)
+router.put("/editarPerfil", usersController.editarPerfil)
 
 
 module.exports = router;

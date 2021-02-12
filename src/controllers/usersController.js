@@ -2,8 +2,15 @@ const db = require("../../database/models/index");
 
 let usersController = {
 
+    root: function(req, res) {
+
+        res.render("users/perfil")
+    },
+
     mostrarLogin : function (req, res) {
+
         res.render("users/login")
+        
     },
     checkLogin : function(req, res) {
         db.User.findAll({})
