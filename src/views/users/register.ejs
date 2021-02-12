@@ -1,22 +1,124 @@
 <%- include( "../partials/head.ejs") %>
+<link rel="stylesheet" href= "/stylesheets/register.css">
+</head>
+
 
 <%- include( "../partials/header.ejs") %>
 
 <body>
-    <h1>Registrarse</h1>
 
-    <form action= "/register" method="POST">
+    <main class="credenciales">
+
+        <div class="form">
+
+            <form  class="formPost" action= "/" method="POST" enctype="multipart/form-data">
+
+                <div class="formUser">
+
+                    <input class="input" type="text" size = "15" maxlength="30" name="name" placeholder="Nombre y Apellido">
+
+                </div>
+
+                <div class="formUser">
+
+                    <input class="input" type="email" size = "15" maxlength="30" name="name" placeholder="Email">
+
+                </div>
+
+                <div class="formDate">
+
+                    
+                    <h5>Fecha de nacimiento</h5>
+
+                    <input class="input" type="date" size = "15" maxlength="30" name="name" >
+
+                </div>
+
+                <div class="formUser">
+
+                    <input class="input" type="text" size = "15" maxlength="30" name="name" placeholder="Domicilio">
+
+                </div>
+
+                <div class="formPerf">
+
+                    <h5>Perfil del usuario</h5>
+
+                    <div class="formPerf-buy">                            
+                        <label for="">Comprador</label>
+
+                        <input class="input"  type="radio" size = "15" maxlength="30" name="name" >
+                    
+                     
+                        <label for="">Vendedor</label>
+                        
+                        <input class="input" type="radio" size = "15" maxlength="30" name="name" >
+                    </div>
+
+                </div>
+
+                <div class="formCheckbox">
+
+                    <h5>Categoría de interés:</h5>
+
+                    <div class="checkbox"> 
+
+                        <div class="categoria">
+                            <label for="">Electro</label>
     
-        <label for = "email">Email</label>
-        <input type="email" size = "15" maxlength="30" name="email">
+                            <input type="checkbox" id="" value="">
+                        </div>
+                        <div class="categoria">
+                            <label for="">Moda</label>
+    
+                            <input type="checkbox" id="" value="">
+                        </div>
+                        <div class="categoria">
+                            <label for="">Hogar</label>
+    
+                            <input type="checkbox" id="" value="">
+                        </div>
+                        <div class="categoria">
+                            <label for="">Juguetería</label>
+    
+                            <input type="checkbox" id="" value="">
+                        </div>
+                        <div class="categoria">
+                            <label for="">Vida sana</label>
+    
+                            <input type="checkbox" id="" value="">
+                        </div>
 
-        <p><label for = "password"></label>Elegí tu contraseña</p>
-        <p><input type="password" id="password" name="password"></p>
+                    </div>                    
 
-        <input type="submit" value="Registrar">
+                </div>
 
-    </form>
-</body>
+                <div class="formImg">
+
+                    <h5>Subir foto de perfil</h5>
+                    <input required id="file-input" multiple="multiple" type="file" name="image" accept=".pdf,.jpg,.png">
+                
+                </div>
+
+                <div class="formPassword">                    
+
+                    <input class="input" type="password" id="password" name="password" placeholder="Elegí tu contraseña">
+
+                </div>
+
+                <div class="formEnviar">
+                    
+                    <input class= "enviarForm input" type="submit" value="Envíar">
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </main>
+    
 
 
 <%- include( "../partials/footer.ejs") %>
