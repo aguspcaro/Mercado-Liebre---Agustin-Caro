@@ -1,26 +1,32 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <header>
 
     <nav class="nav">
 
-        <div class = "imagenLogo">
+        <div class="logoBuscador">
+            <div class = "imagenLogo">
 
-            <a href="/">
-                <img src="/images/logo-mercado-liebre.svg"></img>
-            </a>
+                <a href="/">
+                    <img src="/images/logo-mercado-liebre.svg"></img>
+                </a>
+    
+            </div>
+    
+            <div class="buscar">        
+                   
+                <form action="/search" method="GET" class="form-search"> 
 
-        </div>
-
-        <div class="buscar">                
-            
-            <form action="/buscar" method="GET">
+                    <input type="text" class="search" name="homeSearch" placeholder=" Buscar">
+                    <button class="buttonBuscar"><i class="fas fa-search"></i></button>
                 
-                <input type="text" size = "15" maxlength="30" name="homeBuscar" value="">
-
-                <input type="submit" value="Buscar">
-
-            </form>
-
+                </form> 
+                    
+                  
+            </div>
         </div>
+        
+
+        
 
         <div class="menuList">
 
